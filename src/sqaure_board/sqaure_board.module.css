@@ -1,0 +1,11 @@
+span{
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: thin;
+    border-style: outset;
+    padding: 10px;
+    margin: 13px;
+    text-align: center;
+}

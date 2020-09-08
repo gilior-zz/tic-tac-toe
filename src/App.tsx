@@ -1,26 +1,20 @@
-import React from 'react';
+import React, {FC, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as model from './model/models'
+import {Move} from "./model/models";
+import Sqaure_board from "./sqaure_board/sqaure_board";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    let full_arr_of_moves: Move[] = [{index: 0, label: 'Go to game start'}];
+    const [sub_arr_of_moves, sub_arr_of_points_update] = useState(full_arr_of_moves);
+    const [pannel_char, pannel_char_update] = useState('X');
+    const [pannel_label, pannel_labelupdate] = useState('Next player');
+
+    return (
+        <Sqaure_board sub_arr_of_moves={sub_arr_of_moves}/>
+    )
 }
+
 
 export default App;
